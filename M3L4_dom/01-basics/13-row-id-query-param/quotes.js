@@ -1,5 +1,5 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../SeidoHelpers/seido-helpers.js';
+import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../../SeidoHelpers/seido-helpers.js';
 
 const _seeder = new seedGenerator();
 let _quotes = _seeder.allQuotes;
@@ -16,6 +16,7 @@ for (const q of _quotes) {
     //Note, this will be converted in the tag as data-item-id
     //https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
     li.dataset.itemId = q.id;
+    //data-item-id
 
     const a = document.createElement('a');
     a.innerText = q.quote;

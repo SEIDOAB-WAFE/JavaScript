@@ -53,6 +53,14 @@ function drawTable() {
         let div = document.createElement("div");
         div.innerText = pet.name;
         div.classList.add("TableItem");
+        
+        div.addEventListener('click', (e) => {
+        
+           console.log(e.target.innerText);
+           window.location.href = "./about.html";
+        })
+        
+        
         table.appendChild(div);
     }
 }
