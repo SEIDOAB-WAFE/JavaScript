@@ -19,8 +19,9 @@
     <div class="GridPage">
 			<div class="GridItemMain">
         <div class="About">
-          <h1>Welcome to my Application</h1>
+          <h1><span id="petName">Hola</span>, welcome to my Application</h1>
           <p>
+            <span id="petId">123</span> <br>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat
               odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget
@@ -61,5 +62,20 @@
 
       <!-- Bootstrap Javascript -->
       <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+
+      <script>
+        'use strict';
+
+        let url = new URL(window.location);
+        let params = url.searchParams;
+        let petname = params.get("petname"); 
+        let petid = params.get("petid"); 
+
+        const petSpan = document.querySelector("#petName");
+        petSpan.innerText = petname;
+
+        document.querySelector("#petId").innerText = petid;
+
+      </script>
   </body>
 </html>
