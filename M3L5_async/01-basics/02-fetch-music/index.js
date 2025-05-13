@@ -50,6 +50,8 @@ async function myFetch(url, method = null, body = null) {
   //Use GET to read first page of music groups
   //let reqUrl = `${url}/Read?flat=false&pageNr=0&pageSize=10`;  
   let reqUrl = `${url}/MusicGroup/Read?flat=false&pageNr=0&pageSize=10&filter=Floyd`;
+  
+  
   let data = await myFetch(reqUrl);
   if (data) {
     console.log(`The database contains\n ${data.dbItemsCount} items`);
