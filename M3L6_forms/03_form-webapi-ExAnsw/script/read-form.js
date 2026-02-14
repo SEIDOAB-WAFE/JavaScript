@@ -6,7 +6,7 @@ const groupName = document.querySelector('#groupName');
 const established = document.querySelector('#established');
 
 //Initialize the service
-const _service = new musicService(`https://seido-webservice-307d89e1f16a.azurewebsites.net/api`);
+const _service = new musicService(`https://music.api.public.seido.se/api`);
 
 
 (async () => {
