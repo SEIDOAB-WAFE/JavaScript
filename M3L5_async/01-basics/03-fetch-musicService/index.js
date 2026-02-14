@@ -62,7 +62,7 @@ import musicService from'./music-group-f-service.js';
     `${musicgroupId}`
     ]
   }
-  data = await _service.upsertArtistAsync(newItem)
+  data = await _service.createArtistAsync(newItem)
   console.log(data);
 
   //change the name of the newly created music group

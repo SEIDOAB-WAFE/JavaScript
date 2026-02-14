@@ -87,7 +87,7 @@ class musicService {
       return data;
     }
 
-    async #_upsertItemAsync(reqUrl, newItem)
+    async #_createItemAsync(reqUrl, newItem)
     {
       let data = await this.#_myFetch(reqUrl, 'POST', newItem);
       return data;
@@ -141,7 +141,7 @@ class musicService {
     
     updateArtistAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/Artists/UpdateItem`, id, newItem);
 
-    upsertArtistAsync = async (newItem) => this.#_upsertItemAsync(`${this.url}/Artists/UpsertItem`, newItem);
+    createArtistAsync = async (newItem) => this.#_createItemAsync(`${this.url}/Artists/UpsertItem`, newItem);
 
     deleteArtistAsync = async (id) => this.#_deleteItemAsync(`${this.url}/Artists/DeleteItem`, id);
     //#endregion

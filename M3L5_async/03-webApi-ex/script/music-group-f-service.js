@@ -85,7 +85,7 @@ function musicService (url) {
       return data;
     }
 
-    this._upsertItemAsync = async function (reqUrl, newItem)
+    this._createItemAsync = async function (reqUrl, newItem)
     {
       let data = await this._myFetch(reqUrl, 'POST', newItem);
       return data;
@@ -138,8 +138,6 @@ function musicService (url) {
     this.readArtistDtoAsync = async (id, flat=true) => this._readItemDtoAsync(`${this.url}/Artists/ReadItemDto`, id);
     
     this.updateArtistAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Artists/UpdateItem`, id, newItem);
-
-    this.upsertArtistAsync = async (newItem) => this._upsertItemAsync(`${this.url}/Artists/UpsertItem`, newItem);
 
     this.deleteArtistAsync = async (id) => this._deleteItemAsync(`${this.url}/Artists/DeleteItem`, id);
     //#endregion
