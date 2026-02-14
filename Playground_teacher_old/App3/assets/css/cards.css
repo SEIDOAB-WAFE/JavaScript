@@ -1,0 +1,22 @@
+:root {	/* 0,0 - 2 of clubs, 7,5 - Ace of Hearts */
+
+    /* offsets
+        let top_offset = ["-135px", "-150px", "-170px", "-200px"];
+        let suits = ["Clubs", "Spades", "Diamonds", "Hearts"];
+        let numeral = ["Two", "Three", "Four", "Five", 
+                       "Six", "Seven", "Eight", "Nine", "Ten",
+                       "Knight", "Queen", "King", "Ace"];
+
+    */
+      --cardTopOffset:-200px;
+      --cardRow:7;			   
+      --cardCol:5;
+  }
+
+  .PlayingCard {
+    width: 190px;
+    height: 300px;
+    border-radius: 15px;
+    background-image: url(../img/cards.png);
+    background-position: top calc(var(--cardTopOffset) - var(--cardRow)*110px - var(--cardRow)*228px) left calc(-165px - var(--cardCol)*110px - var(--cardCol)*162px);
+  }

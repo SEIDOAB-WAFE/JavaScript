@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <link href="./assets/css/colors-fonts.css"rel="stylesheet">
+    <link href="./assets/css/page-layout.css"rel="stylesheet">
+    <link href="./assets/css/menu-layout.css"rel="stylesheet">
+    <link href="./assets/css/table-layout.css"rel="stylesheet">
+
+    <link href="./assets/css/index.css"rel="stylesheet">
+    <link href="./assets/css/register.css"rel="stylesheet">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="GridPage">
+			<div class="GridItemMain">
+        <form class="formContainer" id="register" method="post">
+          <div class="formIntroContainer">
+            <div>
+              <h1>Register yourselves</h1>
+            </div>
+            Note: an asterisk (*) indicates a required field
+          </div>
+
+          <div class="formContentContainer">
+            <fieldset>
+              <legend>Your name</legend>
+        
+              <div class="formInputContainer">
+                <input id="fname" name="fname" type="text" placeholder="John" required />
+                <label for="fname">First name</label>
+              </div>
+              <div class="formInputContainer">
+                <input id="lname" name="lname" type="text" placeholder="Doe" required />
+                <label for="lname">Last name</label>
+              </div>
+              <div class="formInputContainer">
+                <input id="email" name="email" type="email" placeholder="john.doe@gmail.com" required />
+                <label for="yearPublished">Email</label>
+              </div>
+            </fieldset>
+        
+            <fieldset>
+              <legend>Your address</legend>
+              <div class="formInputContainer">
+                <input id="street" name="street" type="text" placeholder="Main Street 34" />
+                <label for="street">Street address</label>
+              </div>
+              <div class="formInputContainer">
+                <input id="zip" name="zip" type="text" placeholder="112 11" />
+                <label for="zip">ZipCode</label>
+              </div>
+              <div class="formInputContainer">
+                <input id="city" name="city" type="text" placeholder="Stockholm" />
+                <label for="city">City</label>
+              </div>
+            </fieldset>
+          </div>
+      
+          <button type="submit">Register</button>
+        </form>
+      </div>
+
+			<div class="GridItemSideBarLeft">
+        <div class="MenuWrap">
+          <a href="./index.html" class="MenuItem">Home</a>
+          <a href="./about.html" class="MenuItem">About</a>
+          <a href="./table.html" class="MenuItem">Table</a>
+          <a href="./images.html" class="MenuItem">Images</a>
+          <a href="./cards.html" class="MenuItem">Cards</a>
+          <a href="./register.html" class="LastMenuItem">Register</a>
+        </div>
+    </div>
+    <div class="GridItemHeader">
+      <span>I am content in the Header.</span>
+      <div class="MenuWrap">
+        <a href="./index.html" class="MenuItem">Home</a>
+        <a href="./about.html" class="MenuItem">About</a>
+        <a href="./table.html" class="MenuItem">Table</a>
+        <a href="./cards.html" class="MenuItem">Cards</a>
+        <a href="./images.html" class="MenuItem">Images</a>
+        <a href="./register.html" class="LastMenuItem">Register</a>
+      </div>
+    </div>
+    <div class="GridItemFooter">I am content in the Footer.</div>
+		</div>
+
+
+      <!-- Bootstrap Javascript -->
+      <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
