@@ -35,7 +35,7 @@ if (typeof wrappedTest === 'string') {
 
 
 console.log('\nUNSAFE way to Test for content in a string');
-if (stringTest) {
+if (stringTest) { // try numberTest
   console.log('DANGER! sloppy stringTest');
 }
 
