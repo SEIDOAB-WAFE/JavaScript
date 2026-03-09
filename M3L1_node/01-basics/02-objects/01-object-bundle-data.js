@@ -42,6 +42,7 @@ employee['adress'] = {street: 'Fulterton drive 123', zipCode: '12345', city: 'Ch
 //employee.adress = {street: 'Fulterton drive 123', zipCode: '12345', city: 'Chicago'};
 
 console.log(employee.nickname);
+console.log(employee['nickname']);
 console.log(employee.adress.street);
 
 // Add a computed property name using template literal.
@@ -61,7 +62,8 @@ console.log(employee.myProp4);
 
 //delete a property by using delete keyword
 delete employee.employeeId;
-delete employee.sequence10;
+//delete employee.sequence10;
+delete employee[`sequence10`];
 console.log(employee);
 
 
