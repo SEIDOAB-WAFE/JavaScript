@@ -4,7 +4,7 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../..
 const blankObject = {};
 const objectWithProperty = {price: 47.99};
 
-if (typeof objectWithProperty === 'object' && Object.keys(blankObject).length === 0) {
+if (typeof blankObject === 'object' && Object.keys(blankObject).length === 0) {
   // This code runs because there's nothing in this object
   console.log('blankObject is empty')
 }

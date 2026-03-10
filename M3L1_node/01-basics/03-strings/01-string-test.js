@@ -101,14 +101,15 @@ function myFunc1(myParam) {
   
   //myParam1 MUST be a non-empty string
 
+  //validation using negation pattern
   if (!(typeof myParam === 'string' && myParam.length > 0)) {
 
     console.log("\nwrong type - cannot run the algorithm");
     return;
   }
 
-    console.log("\nNon empty string - do the algorithm");
-
+  //is'all good man
+  console.log("\nNon empty string - do the algorithm");
 }
 
 myFunc1("Martin");
@@ -122,6 +123,7 @@ function myFunc2(myParam1, myParam2) {
   //myParam1 MUST be a non-empty string
   //myParam2 MUST be a valid number
 
+  //validation using negation pattern
   if (!(typeof myParam1 === 'string' && myParam1.length > 0)) {
     console.log("myParam1 is a wrong parameter"); 
     return;
@@ -131,8 +133,8 @@ function myFunc2(myParam1, myParam2) {
     return;
   }
 
+  //is'all good man
   console.log("myParam1 is a non-empty string and myParam2 is a valid number");
-
 }
 
 myFunc2(5, 5);
