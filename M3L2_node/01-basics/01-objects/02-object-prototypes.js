@@ -78,7 +78,7 @@ console.group('Properties inherited are readonly')
 //when setting a proto prop the prop is implictly added to the object
 //Unless getters and setters are used in the prototype
 
-obj1.prot_prop1 = 'prot_prop1-new-value_1';          //We implictly add a new property to obj1
+obj1.prot_prop1 = 'prot_prop1-new-value_1';          //We explicitly add a new property to obj1
 
 console.log(_proto);                                 //_proto props are unchanged
 console.log(obj1);                                   //prot_prop1 is added to obj1
