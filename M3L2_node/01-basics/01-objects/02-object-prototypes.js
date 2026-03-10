@@ -5,17 +5,27 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../..
 //assigning prototype
 let _proto = {prop1: "val1"};
 let o1 = Object.create(_proto);
+let o2 = Object.create(_proto);
+
 console.log(o1);
 console.log(o1.prop1);
 
-//an prop with same name as prototype prop will take precedence
+console.log(o2);
+console.log(o2.prop1);
+
 _proto.prop1 = "new prot value";
 console.log(o1.prop1);
+console.log(o2.prop1);
 
+//an prop with same name as prototype prop will take precedence
+console.log(o1);
 o1.prop1 = "o1 prop1";
 o1.prop2 = "o1 prop2";
+console.log(o1);
 console.log(o1.prop1);
 console.log(o1.prop2);
+
+console.log(o2.prop1);
 
 console.log(Object.getPrototypeOf(o1).prop1);
 
