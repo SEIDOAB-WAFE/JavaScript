@@ -33,3 +33,7 @@ const transactionAmountInCents = 1402;
 
 const updatedBalanceInCents = currentBalanceInCents - transactionAmountInCents;
 console.log(updatedBalanceInCents);  // 536821
+
+//or use roundNumber
+const updatedBalanceSafe = roundNumber(currentBalance - transactionAmount, 2);
+console.log(updatedBalanceSafe);  // 5368.21
