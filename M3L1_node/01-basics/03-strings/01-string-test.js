@@ -3,13 +3,17 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../..
 
 
 let stringTest = '42';
+
 let numberTest = 42;
+let numberAsString = numberTest + '';
+
 const blankTest = '';
 const nullTest = null;
 const wrappedTest = new String('42');
 
 console.log(typeof stringTest);
 console.log(typeof numberTest);
+console.log(typeof number2);
 console.log(typeof wrappedTest);
 console.log(typeof null);
 console.log(typeof undefined);
@@ -89,16 +93,21 @@ if (typeof numberTest === 'number' && !Number.isNaN(numberTest)) {
 }
 
 
+//Use negation to test for wrong parameters in a function, this is a common pattern in js code, 
+//but be careful to use it correctly.
+//Hint, test for what it should be, then negate and return.
+
 function myFunc1(myParam) {
   
-  //myParam1 should be a non-empty string
+  //myParam1 MUST be a non-empty string
+
   if (!(typeof myParam === 'string' && myParam.length > 0)) {
 
     console.log("\nwrong type - cannot run the algorithm");
     return;
   }
 
-    console.log("\nNon empty string - do the algorithm");
+  console.log("\nNon empty string - do the algorithm");
 }
 
 myFunc1("Martin");
@@ -109,8 +118,8 @@ myFunc1(0);
 
 function myFunc2(myParam1, myParam2) {
 
-  //myParam1 should be a non-empty string
-  //myParam2 should be a valid number
+  //myParam1 MUST be a non-empty string
+  //myParam2 MUST be a valid number
 
   if (!(typeof myParam1 === 'string' && myParam1.length > 0)) {
     console.log("myParam1 is a wrong parameter"); 
