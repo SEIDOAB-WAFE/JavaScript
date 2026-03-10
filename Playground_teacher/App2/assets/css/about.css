@@ -1,0 +1,17 @@
+body{
+  background-color: #dad7cd;
+} 
+
+h1 { 
+  text-align: center;
+  margin: 10px;
+}
+h2 { 
+  text-align: end;
+  margin: 10px;
+}
+
+.GridItemMain {
+  color: black;
+  padding: 2rem;
+}
