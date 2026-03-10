@@ -8,6 +8,7 @@ console.log(favoriteMovie);
 
 const copyrightNotice = 'This page \u00A9 Shelley Powers.';
 console.log(copyrightNotice);
+console.log(`${'\u00A9'}.length is ${'\u00A9'.length}`); // \u00A9 is a single character, 
 
 // Strings with emojis
 //choose your favorite emoji at https://unicode-table.com/en/sets/top-emoji/
