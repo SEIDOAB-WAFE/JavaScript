@@ -40,7 +40,7 @@ console.log(_seeder.bool);
 console.log(_seeder.dateAndTime());
 
 
-console.log(_seeder.fromString(`hello, world, again`));
+console.log(_seeder.fromString(`bear.png, elephant.png, parrot.png`));
 console.log(_seeder.fromArray([`hello`, `world`, `again`]));
 
 console.log(randomNumber(0, 100));
