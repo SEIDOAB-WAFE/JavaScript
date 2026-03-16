@@ -1,35 +1,33 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, randomDecimal, deepCopy, isEqual} from '../../../../SeidoHelpers/seido-helpers.js'
+import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../../SeidoHelpers/seido-helpers.js';
 
-//test that scripts are working
-console.log("Hello world");
+
+let seeder = new seedGenerator();
+
+let pets = [];
 for (let index = 0; index < 10; index++) {
-    console.log(index);
-
-}
-
-// data generation
-const nrImages = 10;
-const images = [];
-for (let i = 0; i < nrImages; i++) {
-    const image = {
-        id: uniqueId(),
-        //imgSrc: //from seedgenerato
-        //imgText: //seedgeneratot
-    }
-    images.push(image)
+    
+    let animalType = seeder.fromString("bear, elephant, parrot, penguin, zebra");
+    pets.push({name: seeder.petName, age: randomNumber(0,20), type: animalType,
+        imgSrc: `../img/${animalType}.png`});
 }
 
 
+let album = document.querySelector(".ImgAlbum");
 
-// image rendering
-const imageList = document.querySelector('#imageList');
+for (const pet of pets) {
 
-const imageItem = document.createElement("div");
-imageItem.classList.add("ImgItem");
+    let div1 = document.createElement("div");
+    let img = document.createElement("img");
+    img.src =  pet.imgSrc;
+    div1.appendChild(img);
 
+    let p = document.createElement("p");
+    p.innerText = `I'm ${pet.name}. I am a ${pet.age} year old ${pet.type}`;
 
-const p = document.createElement("p");
-imageItem.appendChild(p);
-
-imageList.appendChild(imageItem);
+    let imgItem = document.createElement("div");
+    imgItem.classList.add("ImgItem");
+    imgItem.appendChild(div1);
+    imgItem.appendChild(p);
+    album.appendChild(imgItem);
+}
