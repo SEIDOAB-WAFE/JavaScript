@@ -28,10 +28,12 @@ for (let idxBook = 0; idxBook < books.length; idxBook++)
     console.log(idxBook, idxItem, books[idxBook][idxItem]);
 
 
-//using foreach and arror function
-books.forEach((book) => {
-  book.forEach((item) => (console.log(`${book}: item: ${item}`)))
+//using foreach and arrow function
+books.forEach(book => {
+  book.forEach(item => console.log(`${book}: item: ${item}`))
 });
+
+books.forEach(book => book.forEach(item => console.log(`${book}: item: ${item}`)));
 console.groupEnd
 
 

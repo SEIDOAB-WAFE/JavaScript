@@ -2,7 +2,7 @@
 import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../../SeidoHelpers/seido-helpers.js';
 
 console.group('Test if object is an array')
-const browserNames = ['Firefox', 'Edge', 'Chrome', 'IE', 'Safari'];
+const browserNames = [];
 
 
 const a = ['Martin', 45, true, {}, []];
@@ -10,12 +10,9 @@ for (const item of a) {
    console.log(item, typeof item, Array.isArray(item));
 }
 
-if (Array.isArray(browserNames && browserNames.length > 0)) {
-  // We end up here, because browserNames is a valid array.
-  console.log('browserNames is an array');
-}
-else {
-  console.log('browserNames is not an array');
+if (Array.isArray(browserNames) && browserNames.length === 0) {
+  // We end up here, because browserNames is a valid array, non empty
+  console.log('browserNames is an empty array');
 }
 console.groupEnd();
 
