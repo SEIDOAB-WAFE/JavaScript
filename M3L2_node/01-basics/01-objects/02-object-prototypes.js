@@ -45,7 +45,7 @@ console.group('Every object has a prototype, empty object has Object as prototyp
 // https://www.w3schools.com/js/js_object_prototypes.asp
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
 
-let o = {greeting:'hello'};
+let o = {greeting:'hello from object'};
 _proto = Object.getPrototypeOf(o);
 
 console.log(_proto);            //Object literals {} has Object as prototype, inherited properties and functions from Object
@@ -59,6 +59,10 @@ console.log(o.toString());
 console.log('' + o);             //See the trick here, forcing o to use toString()
 
 //I can change toString() of the prototype object without affecting the child
+_proto.toString = function () { return `${this.greeting}`; };
+console.log('' + _proto);    //Prototype, notice property greeting is undefined in the property
+
+_proto.greeting = 'hello from proto';
 _proto.toString = function () { return `${this.greeting}`; };
 console.log('' + _proto);    //Prototype, notice property greeting is undefined in the property
 
