@@ -69,14 +69,14 @@ function FuncCprop() {
     }
 }
 FuncCprop.prototype = {
-    funcEmbeddedProp: function () {
+    funcEmbeddedProto: function () {
         console.log(this);       //FuncCprop
         console.log(this.prop);
     }
 }
 const fc1 = new FuncCprop();
 fc1.funcEmbedded(); 
-fc1.funcEmbeddedProp(); 
+fc1.funcEmbeddedProto(); 
 console.groupEnd();
 
 console.group('Class-as-class context');
@@ -86,7 +86,6 @@ class classClass {
     constructor () {
     console.log(this);           //classClass
 
-    //but you use it to define properties, when later executed
     this.prop = "Class prop";
     }
 

@@ -76,7 +76,6 @@ const deck = new deckOfCards();
 
 
 /* Exercise
-1. write a function shuffle() that shuffles the deck
 2. In a playing card, introduce to properties, suitOrder, 0 to 3, and numeralOrder 2 to 14, and
    set them when creating the deck. 
 3. write a functions 

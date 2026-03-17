@@ -2,7 +2,7 @@
 'use strict';  // Try without strict mode
 
 //This is an example of where this context is peculiar, Callbacks
-function Counter(from, to, divElement) {
+function Counter(from, to) {
   this.currentCount = from;
   this.finishCount = to;
 }
@@ -18,7 +18,9 @@ Counter.prototype = {
       // Schedule this function to run again after 1 second.
       // Increament counter is a Callback from setTimer
 
-      // In the CallBack decrementCounter this will be undefined
+      // Be very careful with "this" in a callback functions. The context of 'this' is lost, and it will not refer to the Counter object anymore. 
+      // It will be undefined in strict mode, or the global object in non-strict mode.
+
       setTimeout(this.decrementCounter, 1000);  // number error
 
       //Bind to 'this' ensures all further callback are bound to this object, Counter

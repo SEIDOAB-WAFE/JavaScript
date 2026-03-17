@@ -30,15 +30,17 @@ const prototypeCard = {
 //    toString: function () { return `${this.suit} of ${this.numeral} is a ${this.cardColor()} ${this.cardFaceOrNumeral} card` }
 }
 
-let card1 = { suit: "Heart", numeral: "King", value: 13, spriteRow: 2, spriteCol: 2 }; //sprite... is position in the cards.jpg
-let card2 = { suit: "Heart", numeral: "Ace", value: 14, spriteRow: 0, spriteCol: 0 };
-let card3 = { suit: "Heart", numeral: "Five", value: 5, spriteRow: 0, spriteCol: 4 };
+let card1 = { suit: "Heart", numeral: "King", spriteRow: 2, spriteCol: 2 }; //sprite... is position in the cards.jpg
+let card2 = { suit: "Heart", numeral: "Ace", spriteRow: 0, spriteCol: 0 };
+let card3 = { suit: "Heart", numeral: "Five", spriteRow: 0, spriteCol: 4 };
 
 //now we can assign the prototype to the created objects
 Object.setPrototypeOf(card1, prototypeCard);
 Object.setPrototypeOf(card2, prototypeCard);
 Object.setPrototypeOf(card3, prototypeCard);
 
+console.log('' + card1);
+console.log('' + card2);
 console.log('' + card1);
 
 export {prototypeCard}
