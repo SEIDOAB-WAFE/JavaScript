@@ -8,30 +8,36 @@
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 
 const prototypeCard = {
-    get cardColor() {    //note, no parameter
-        switch (this.suit) {    //note, I use this
+    cardColor: function () {
+        switch (this.suit) {
             case 'Heart':
             case 'Diamond': return 'red';
         }
         return 'black';
     },
-    get cardFaceOrNumeral() {    //note, I can now change it to a getter
-        switch (this.numeral) {
+    cardFaceOrNumeral: function () {   
+//    get cardFaceOrNumeral () {    //note, I can now change it to a getter
+            switch (this.numeral) {
             case 'Knight':
             case 'Queen':
             case 'King': return 'face';
         }
         return 'numeral';
     },
-    toString: function () { return `${this.suit} of ${this.numeral} is a ${this.cardColor} ${this.cardFaceOrNumeral} card` }
+    toString: function () { return `${this.suit} of ${this.numeral} is a ${this.cardColor()} ${this.cardFaceOrNumeral()} card` }
+
+    //if I use a getter
+//    toString: function () { return `${this.suit} of ${this.numeral} is a ${this.cardColor()} ${this.cardFaceOrNumeral} card` }
 }
 
-//Just to test creating a couple of cards
-let card1 = Object.create(prototypeCard,
-    {
-        suit: { value: "Heart" }, numeral: { value: "Knight" }, value: { value: 13 },
-        spriteRow: { value: 2, writable: true }, spriteCol: { value: 2, writable: true }
-    });
+let card1 = { suit: "Heart", numeral: "King", value: 13, spriteRow: 2, spriteCol: 2 }; //sprite... is position in the cards.jpg
+let card2 = { suit: "Heart", numeral: "Ace", value: 14, spriteRow: 0, spriteCol: 0 };
+let card3 = { suit: "Heart", numeral: "Five", value: 5, spriteRow: 0, spriteCol: 4 };
+
+//now we can assign the prototype to the created objects
+Object.setPrototypeOf(card1, prototypeCard);
+Object.setPrototypeOf(card2, prototypeCard);
+Object.setPrototypeOf(card3, prototypeCard);
 
 console.log('' + card1);
 

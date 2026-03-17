@@ -109,6 +109,8 @@ console.log(deck.count());
 1. write a function shuffle() that shuffles the deck
 2. In a playing card, introduce to properties, suitOrder, 0 to 3, and numeralOrder 2 to 14, and
    set them when creating the deck. 
-3. write a function sort() that sorts the deck in the suit and numeral order using the properties introduced in 
-   exercise 2
+3. write a functions 
+        - this.count() that returns the number of cards left in the deck
+        - this.dealOne() that deals one card from the deck and removes it from the deck
+        - this.shuffle() that shuffles the deck
 */
