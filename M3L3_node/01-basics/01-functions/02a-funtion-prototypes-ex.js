@@ -55,7 +55,7 @@ for (const v of vehicles) {
 
 
 /* Exercises
-1. Make a deepCopy of vehicles, dc_vehicles
+1. In Vehicle prototype, make a deepCopy function and create a deep copy of vehicles, dc_vehicles
 2. Sort dc_vehicles according to age and printout
 3. Extract the oldest dc_vehicles into a separate array
 

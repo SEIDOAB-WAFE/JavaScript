@@ -6,8 +6,9 @@ function Animal(name) {
     this.name = name;
 
     this.sayHello = function () {
-        console.log(`Hello, I am ${this.name}!`);
+        console.log(`Hello, I am ${this.name} a ${this.breed}!`);
     };
+    this.makeSound = function () {console.log(`${this.name}, a ${this.breed}, says: ${this.sound}`)};
 }
 
 // Child Constructor
@@ -17,7 +18,7 @@ function Dog(name, breed) {
     Animal.call(this, name); 
 
     this.breed = breed;
-    this.sound = function () {console.log(`${this.name}, a ${this.breed}, says: Woof! Woof!`)};
+    this.sound = "Woof! Woof!";
 }
 
 function Cat(name, breed) {
@@ -26,15 +27,15 @@ function Cat(name, breed) {
     Animal.call(this, name); 
 
     this.breed = breed;
-    this.sound = function () {console.log(`${this.name}, a ${this.breed}, says: Miau!`)};
+    this.sound = "Miau!";
 }
 
 
 const myDog = new Dog("Buddy", "Golden Retriever");
-myDog.sayHello();  // Hello, I am Buddy!
-myDog.sound();     // Buddy, a Golden Retriever, says: Woof! Woof!
+myDog.sayHello();  
+myDog.makeSound();  
 
 const myCat = new Cat("Charlie", "Small Tiger");
 myCat.sayHello();
-myCat.sound();
+myCat.makeSound();
 

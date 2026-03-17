@@ -5,9 +5,9 @@ function Animal(name) {
     this.name = name;
 }
 
-Animal.prototype.sayHello = function () {
-    console.log(`Hello, I am ${this.name}!`);
-};
+Animal.prototype.sayHello = function () { console.log(`Hello, I am ${this.name} a ${this.breed}!`);};
+Animal.prototype.makeSound = function () {console.log(`${this.name}, a ${this.breed}, says: ${this.sound}`)};
+
 
 function Dog(name, breed) {
     
@@ -15,14 +15,11 @@ function Dog(name, breed) {
     Animal.call(this, name);
     this.breed = breed;
 
-    this.sound = function () {
-        console.log(`${this.name}, a ${this.breed}, says: Woof!`);
-    };
+    this.sound = "Woof! Woof!";
 }
 
-//Inheritance step2 - Set child prototype to parent prototype and constructor to child
+//Inheritance step2 - Set child prototype to parent prototype
 Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
 
 
 function Cat(name, breed) {
@@ -31,20 +28,18 @@ function Cat(name, breed) {
     Animal.call(this, name); 
 
     this.breed = breed;
-    this.sound = function () {
-        console.log(`${this.name}, a ${this.breed}, says: Miau!`)};
+    this.sound = "Miau!";
 }
 
-//Inheritance step2 - Set child prototype to parent prototype and constructor to child
+//Inheritance step2 - Set child prototype to parent prototype
 Cat.prototype = Object.create(Animal.prototype);
-Cat.prototype.constructor = Cat;
 
 
 const myDog = new Dog("Buddy", "Golden Retriever");
-myDog.sayHello();  // Hello, I am Buddy!
-myDog.sound();     // Buddy, a Golden Retriever, says: Woof! Woof!
+myDog.sayHello();  
+myDog.makeSound(); 
 
 const myCat = new Cat("Charlie", "Small Tiger");
 myCat.sayHello();
-myCat.sound();
+myCat.makeSound();
 
