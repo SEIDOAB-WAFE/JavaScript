@@ -25,7 +25,7 @@
     border-radius: 15px;
     background-image: url(../../../img/cards.png);
   }
-
+  
   /*
       background-position: top calc(var(--cardTopOffset) - var(--cardRow)*110px - var(--cardRow)*228px) left calc(-165px - var(--cardCol)*110px - var(--cardCol)*162px);
   */
