@@ -38,7 +38,6 @@
                 <a href="./about.html" class="ListItem">Home</a>
                 <a href="./images.html" class="ListItem">Album</a>
                 <a href="./cards.html" class="ListItem">Cards</a>
-                <a href="./table.html" class="ListItem">Table</a>
                 <a href="./layout.html" class="LastItem">Layout</a>
             </div>
         </div>
@@ -46,7 +45,9 @@
         <div class="GridItemFooter">(c) Martin</div>
     </div>
 
-    <script>
+    <script src="./assets/js/cards.js" type="module"></script>
+
+        <script>
         const [cardRow, cardCol, cardTopOffset] = [7,6, -200];
         const spriteTop =  cardTopOffset - cardRow*110 - cardRow*228;
         const spriteLeft = -165 - cardCol*110 - cardCol*162;
@@ -59,8 +60,6 @@
             console.log("Playing card Clicked");
 
         }));
-
-
 
     </script>
 </body>
