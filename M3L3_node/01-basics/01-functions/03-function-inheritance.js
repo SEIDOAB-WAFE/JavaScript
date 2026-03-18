@@ -30,6 +30,9 @@ function Cat(name, breed) {
     this.sound = "Miau!";
 }
 
+const myAnimal = new Animal("Generic Animal");
+myAnimal.sayHello();  
+myAnimal.makeSound();
 
 const myDog = new Dog("Buddy", "Golden Retriever");
 myDog.sayHello();  

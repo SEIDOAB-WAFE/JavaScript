@@ -2,7 +2,7 @@
 import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../../SeidoHelpers/seido-helpers.js';
 
 console.group('Nu skapar vi kontot');
-export function Account({ accountNr, accountTotal, firstName, lastName, city } =
+function Account({ accountNr, accountTotal, firstName, lastName, city } =
     { accountNr: 'xxx-xxx-xxx', accountTotal: 0, firstName: 'unknown', lastName: 'unknown', city: 'unknown' }) {
 
     this.accountNr = accountNr;
@@ -48,3 +48,4 @@ const accounts = new Account().createRandomMany(10);
 accounts.forEach(acc => console.log(''+acc));
 console.groupEnd();
 
+export { Account };
