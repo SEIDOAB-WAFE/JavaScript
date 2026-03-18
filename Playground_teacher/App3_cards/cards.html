@@ -17,19 +17,19 @@
         <div class="GridItemMain">
         <div class="ImgAlbum">
           <div class="ImgItem">
-              <div class="PlayingCard"></div>
+              <div class="PlayingCard" data-card-index="0"></div>
           </div>
           <div class="ImgItem">
-            <div class="PlayingCard"></div>
+            <div class="PlayingCard" data-card-index="1"></div>
           </div>
           <div class="ImgItem">
-            <div class="PlayingCard"></div>
+            <div class="PlayingCard" data-card-index="2"></div>
           </div>
           <div class="ImgItem">
-            <div class="PlayingCard"></div>
+            <div class="PlayingCard" data-card-index="3"></div>
           </div>
           <div class="ImgItem">
-            <div class="PlayingCard"></div>
+            <div class="PlayingCard" data-card-index="4"></div>
           </div>
         </div> 
         </div>
@@ -47,20 +47,12 @@
 
     <script src="./assets/js/cards.js" type="module"></script>
 
-        <script>
+    <script>
         const [cardRow, cardCol, cardTopOffset] = [7,6, -200];
         const spriteTop =  cardTopOffset - cardRow*110 - cardRow*228;
         const spriteLeft = -165 - cardCol*110 - cardCol*162;
 
         const joker = {cardRow: 7, cardCol: 6, cardTopOffset: -200};
-
-        const cards = document.querySelectorAll(".PlayingCard");
-        cards.forEach(c => c.addEventListener("click", e => {
-
-            console.log("Playing card Clicked");
-
-        }));
-
     </script>
 </body>
 </html>

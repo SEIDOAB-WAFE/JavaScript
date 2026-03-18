@@ -18,3 +18,11 @@ card[0].setAttribute(
 card[1].setAttribute(
     'style', `background-position: top ${joker.cardTopOffset - joker.cardRow*110 - joker.cardRow*228}px left ${-165 - joker.cardCol*110 - joker.cardCol*162}px;`
 )
+
+
+const cards = document.querySelectorAll(".PlayingCard");
+cards.forEach(c => c.addEventListener("click", e => {
+
+    console.log(`clicked card index: ${e.currentTarget.dataset.cardIndex}`);
+
+}));
