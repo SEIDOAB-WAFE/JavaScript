@@ -1,0 +1,13 @@
+h1 { 
+  text-align: center;
+  margin: 10px;
+}
+h2 { 
+  text-align: end;
+  margin: 10px;
+}
+
+.GridItemMain {
+  color: var(--color5);
+  padding: 2rem;
+}

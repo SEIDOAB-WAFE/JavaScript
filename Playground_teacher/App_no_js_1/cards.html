@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first application</title>
+
+    <link rel="stylesheet" href="./assets/css/colors-fonts.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/images.css" />
+
+    <link rel="stylesheet" href="./assets/css/cards.css" />
+
+</head>
+<body>
+    <div class="GridPage">
+        <div class="GridItemMain">
+        <div class="ImgAlbum">
+          <div class="ImgItem">
+              <div class="PlayingCard"></div>
+          </div>
+          <div class="ImgItem">
+            <div class="PlayingCard"></div>
+          </div>
+          <div class="ImgItem">
+            <div class="PlayingCard"></div>
+          </div>
+          <div class="ImgItem">
+            <div class="PlayingCard"></div>
+          </div>
+          <div class="ImgItem">
+            <div class="PlayingCard"></div>
+          </div>
+        </div> 
+        </div>
+        <div class="GridItemSideBarLeft">
+            <div class="MenuWrap">
+                <a href="./about.html" class="ListItem">Home</a>
+                <a href="./images.html" class="ListItem">Album</a>
+                <a href="./cards.html" class="ListItem">Cards</a>
+                <a href="./table.html" class="ListItem">Table</a>
+                <a href="./layout.html" class="LastItem">Layout</a>
+            </div>
+        </div>
+        <div class="GridItemHeader">My Application</div>
+        <div class="GridItemFooter">(c) Martin</div>
+    </div>
+
+    <script>
+        const [cardRow, cardCol, cardTopOffset] = [7,6, -200];
+        const spriteTop =  cardTopOffset - cardRow*110 - cardRow*228;
+        const spriteLeft = -165 - cardCol*110 - cardCol*162;
+
+        const joker = {cardRow: 7, cardCol: 6, cardTopOffset: -200};
+
+        const cards = document.querySelectorAll(".PlayingCard");
+        cards.forEach(c => c.addEventListener("click", e => {
+
+            console.log("Playing card Clicked");
+
+        }));
+
+
+
+    </script>
+</body>
+</html>

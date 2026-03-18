@@ -30,15 +30,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Chrome ../../images.html",
-            "url": "http://localhost:5502/${relativeFileDirname}/../../images.html",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "AppFinal",
-            "url": "http://localhost:5502/${relativeFileDirname}/../table.html",
+            "name": "Chrome ../../table.html",
+            "url": "http://localhost:5502/${relativeFileDirname}/../../table.html",
             "webRoot": "${workspaceFolder}"
         },
         {
