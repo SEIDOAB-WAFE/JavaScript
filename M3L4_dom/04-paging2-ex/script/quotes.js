@@ -40,6 +40,7 @@ function clickHandlerLoveQ (e) {
 }
 
 function clickHandlerClear (e) {
+    //clear the list and reset the quoteList to all quotes
 }
 
 

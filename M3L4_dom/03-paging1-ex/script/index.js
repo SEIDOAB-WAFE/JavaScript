@@ -24,7 +24,7 @@ const maxNrPages = Math.ceil(baccounts.length/pageSize);
 
 //Initial page presentation
 bankID.innerHTML = bank1.toString();
-removeAllChildNodes(acountList);
+//removeAllChildNodes(acountList);
 renderAccounts(0);
 
 

@@ -3,7 +3,7 @@
 
 //https://newsapi.org/docs/endpoints/top-headlines
 //Example where News do not allow cors on developer license
-const _apiKey = "7a31b34188d8496faa260f42d1938be4";
+const _apiKey = "eee86395bdce14b3d962d5956193d800";
 //Use your own API key, you can get it for free on newsapi.org, 
 
 
@@ -11,9 +11,7 @@ async function myFetch(url) {
   try {
 
     
-    let res = await fetch(url, {
-      headers: {'x-api-key': _apiKey}
-    });
+    let res = await fetch(url);
     
     if (res.ok) {
 
@@ -45,29 +43,21 @@ async function myFetch(url) {
 (async () => {
 
   //Here I write all the code to be executed at script top level, c# main level
-  const newsList = document.getElementById('results');
-  const newsCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
+  const forecastList = document.getElementById('results');
 
-  for (const category of newsCategories) {
+  const city = "Stockholm";
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=en&appid=${_apiKey}`;
+  const forecast = await myFetch(url);
 
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}`;
-    const news = await myFetch(url);
+  for (const item of forecast.list) {
 
-    console.log(news);
-
-    //Create a header of the news category
-    const newsCat = document.createElement('h2');
-    newsCat.innerHTML = category;
-    newsList.appendChild(newsCat);
-
-    //create a categoryList
-    const categoryList = document.createElement('ul');
-    news.articles.forEach(article => {
+    const forecastList = document.createElement('ul');
+    forecast.list.forEach(item => {
       const listItem = document.createElement('li');
-      listItem.innerText = article.title;
-      categoryList.appendChild(listItem);
+      listItem.innerText = `${item.dt_txt}: ${item.main.temp}°C, ${item.weather[0].description}`;
+      forecastList.appendChild(listItem);
     });
-    newsList.appendChild(categoryList);
+    forecastList.appendChild(forecastList);
   }
 })();
 
