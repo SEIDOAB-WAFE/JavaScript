@@ -73,6 +73,7 @@ async function myFetch(url) {
 
 
 //Exercise: 
+// 1. 
 // Create a simple hmtl page and javascript file that reads the weather forecast 
 // for the next 5 days for a city of your choice using the OpenWeatherMap API (https://openweathermap.org/api). 
 // Display the forecast including the date, temperature, and weather conditions.
@@ -82,3 +83,6 @@ async function myFetch(url) {
 //  const _apiKey = "eee86395bdce14b3d962d5956193d800";
 //  const city = "Stockholm";
 //  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=en&appid=${_apiKey}`;
+
+// 2. Explore free APIs on the internet and create a simple web page that fetches and displays data from one of those APIs.
+// Hint: you can find free APIs on websites like https://publicapis.io
