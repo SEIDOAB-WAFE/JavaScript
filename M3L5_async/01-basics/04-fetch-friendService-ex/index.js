@@ -7,7 +7,8 @@ import friendService from'./friendService.js';
 
   //Initialize the service
   const _service = new friendService(`https://friends.api.public.seido.se/api`);
-
+  //https://friends.api.public.seido.se/swagger
+  
   //Read Database info async
   let data = await _service.readInfoAsync();
   console.log(data);
