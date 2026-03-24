@@ -38,7 +38,7 @@ import musicService from'./music-group-f-service.js';
   data = await _service.createMusicGroupAsync(newItem)
   console.log(data);
 
-  const musicgroupId = data.musicGroupId;
+  const musicgroupId = data.item.musicGroupId;
   //create an album to the newly created music group
   newItem = {
     "albumId": null,
@@ -67,8 +67,8 @@ import musicService from'./music-group-f-service.js';
 
   //change the name of the newly created music group
   data = await _service.readMusicGroupDtoAsync(musicgroupId)
-  data.name = data.name.replace(`Metallica`, `Toppiwhoppy`);
-  data = await _service.updateMusicGroupAsync(musicgroupId, data)
+  data.item.name = data.item.name.replace(`Metallica`, `Toppiwhoppy`);
+  data = await _service.updateMusicGroupAsync(musicgroupId, data.item)
   console.log(data);
 
   //remove the newly created music group
@@ -80,20 +80,20 @@ import musicService from'./music-group-f-service.js';
   console.log(await _service.readAlbumAsync(data.pageItems[0].albumId));
 
   data = await _service.readAlbumDtoAsync(data.pageItems[0].albumId)
-  data.name = `Willy Wonka sings about chocolate`;
-  console.log(await _service.updateAlbumAsync(data.albumId, data));
+  data.item.name = `Willy Wonka sings about chocolate`;
+  console.log(await _service.updateAlbumAsync(data.item.albumId, data.item));
 
-  console.log(await _service.deleteAlbumAsync(data.albumId));
+  console.log(await _service.deleteAlbumAsync(data.item.albumId));
 
   console.log(data = await _service.readArtistsAsync(0));
   console.log(await _service.readArtistAsync(data.pageItems[0].artistId));
 
   data = await _service.readArtistDtoAsync(data.pageItems[0].artistId)
-  data.firstName = `Willy`;
-  data.lastName = `Wonka`;
-  console.log(await _service.updateArtistAsync(data.artistId, data));
+  data.item.firstName = `Willy`;
+  data.item.lastName = `Wonka`;
+  console.log(await _service.updateArtistAsync(data.item.artistId, data.item));
 
-  console.log(await _service.deleteArtistAsync(data.artistId));
+  console.log(await _service.deleteArtistAsync(data.item.artistId));
   //#endregion
 
 })();
