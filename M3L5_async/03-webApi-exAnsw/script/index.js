@@ -12,9 +12,9 @@ import musicService from'./music-group-f-service.js';
   let data = await _service.readInfoAsync();
   console.log(data);
 
-  document.querySelector('#count-groups').innerText = `${data.db.nrSeededMusicGroups + data.db.nrUnseededMusicGroups} music groups`;
-  document.querySelector('#count-albums').innerText = `${data.db.nrSeededAlbums + data.db.nrUnseededAlbums} albums`;
-  document.querySelector('#count-artists').innerText = `${data.db.nrSeededArtists + data.db.nrUnseededArtists} artists`;
+  document.querySelector('#count-groups').innerText = `${data.item.db.nrSeededMusicGroups + data.item.db.nrUnseededMusicGroups} music groups`;
+  document.querySelector('#count-albums').innerText = `${data.item.db.nrSeededAlbums + data.item.db.nrUnseededAlbums} albums`;
+  document.querySelector('#count-artists').innerText = `${data.item.db.nrSeededArtists + data.item.db.nrUnseededArtists} artists`;
 
   const artistList = document.querySelector('#artists');
   let _data = await _service.readArtistsAsync(0);
@@ -42,7 +42,7 @@ import musicService from'./music-group-f-service.js';
   _data = await _service.readAlbumAsync(_data.pageItems[0].albumId, false);
   console.log(_data);
   const albumDetail = document.querySelector('#albumDetail');
-  albumDetail.innerText =  `${_data.name} was made by the group ${_data.musicGroup.name}.`;
+  albumDetail.innerText =  `${_data.item.name} was made by the group ${_data.item.musicGroup.name}.`;
 
 
 })();

@@ -1,6 +1,5 @@
 'use strict'; 
 
-//WebApi service broken out in a class to give CRUD musicGroup, Album and Artist
 function musicService (url) {
 
     //constructor
@@ -138,6 +137,8 @@ function musicService (url) {
     this.readArtistDtoAsync = async (id, flat=true) => this._readItemDtoAsync(`${this.url}/Artists/ReadItemDto`, id);
     
     this.updateArtistAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Artists/UpdateItem`, id, newItem);
+
+    this.createArtistAsync = async (newItem) => this._createItemAsync(`${this.url}/Artists/CreateItem`, newItem);
 
     this.deleteArtistAsync = async (id) => this._deleteItemAsync(`${this.url}/Artists/DeleteItem`, id);
     //#endregion
