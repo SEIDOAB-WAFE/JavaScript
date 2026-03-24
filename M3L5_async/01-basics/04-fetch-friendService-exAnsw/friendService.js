@@ -1,7 +1,6 @@
 'use strict'; 
 
-//WebApi service broken out in a class to give CRUD musicGroup, Album and Artist
-function musicService (url) {
+function friendService (url) {
 
     //constructor
     this.url = url;
@@ -97,52 +96,47 @@ function musicService (url) {
       return await this._myFetch(`${this.url}/Guest/Info`);
     }
 
-    //#region CRUD MusicGroup
-    //using traditional function syntax (like in C#)
-    this.readMusicGroupsAsync = async function (pageNr, flat=false, filter=null, pageSize=10) 
-    {
-      return await this._readItemsAsync(`${this.url}/MusicGroups/Read`, pageNr, flat, filter, pageSize);
-    }
+    //#region CRUD Friend
+    this.readFriendsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this._readItemsAsync(`${this.url}/Friends/Read`, pageNr, flat, filter, pageSize);
     
-    //using JavaScrip's ability to asign a function to a variable or property (like c# delegate)
-    this.readMusicGroupAsync = async (id, flat=true) => this._readItemAsync(`${this.url}/MusicGroups/ReadItem`, id, flat);
+    this.readFriendAsync = async (id, flat=true) => this._readItemAsync(`${this.url}/Friends/ReadItem`, id, flat);
     
-    this.readMusicGroupDtoAsync = async (id) => this._readItemDtoAsync(`${this.url}/MusicGroups/ReadItemDto`, id);
+    this.readFriendDtoAsync = async (id) => this._readItemDtoAsync(`${this.url}/Friends/ReadItemDto`, id);
    
-    this.updateMusicGroupAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/MusicGroups/UpdateItem`, id, newItem);
+    this.updateFriendAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Friends/UpdateItem`, id, newItem);
   
-    this.createMusicGroupAsync = async (newItem) => this._createItemAsync(`${this.url}/MusicGroups/CreateItem`, newItem);
+    this.createFriendAsync = async (newItem) => this._createItemAsync(`${this.url}/Friends/CreateItem`, newItem);
  
-    this.deleteMusicGroupAsync = async (id) => this._deleteItemAsync(`${this.url}/MusicGroups/DeleteItem`, id);
+    this.deleteFriendAsync = async (id) => this._deleteItemAsync(`${this.url}/Friends/DeleteItem`, id);
     //#endregion
 
-    //#region CRUD Album
-    this.readAlbumsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this._readItemsAsync(`${this.url}/Albums/Read`, pageNr, flat, filter, pageSize);
+    //#region CRUD Pet
+    this.readPetsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this._readItemsAsync(`${this.url}/Pets/Read`, pageNr, flat, filter, pageSize);
     
-    this.readAlbumAsync  = async (id, flat=true) => this._readItemAsync(`${this.url}/Albums/ReadItem`, id, flat);
+    this.readPetAsync  = async (id, flat=true) => this._readItemAsync(`${this.url}/Pets/ReadItem`, id, flat);
 
-    this.readAlbumDtoAsync = async (id) => this._readItemDtoAsync(`${this.url}/Albums/ReadItemDto`, id);
+    this.readPetDtoAsync = async (id) => this._readItemDtoAsync(`${this.url}/Pets/ReadItemDto`, id);
 
-    this.updateAlbumAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Albums/UpdateItem`, id, newItem);
+    this.updatePetAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Pets/UpdateItem`, id, newItem);
 
-    this.createAlbumAsync = async (newItem) => this._createItemAsync(`${this.url}/Albums/CreateItem`, newItem);
+    this.createPetAsync = async (newItem) => this._createItemAsync(`${this.url}/Pets/CreateItem`, newItem);
 
-    this.deleteAlbumAsync = async (id) => this._deleteItemAsync(`${this.url}/Albums/DeleteItem`, id);
+    this.deletePetAsync = async (id) => this._deleteItemAsync(`${this.url}/Pets/DeleteItem`, id);
     //#endregion
     
-    //#region CRUD Artist
-    this.readArtistsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this._readItemsAsync(`${this.url}/Artists/Read`, pageNr, flat, filter, pageSize);
+    //#region CRUD Quote
+    this.readQuotesAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this._readItemsAsync(`${this.url}/Quotes/Read`, pageNr, flat, filter, pageSize);
     
-    this.readArtistAsync = async (id, flat=true) => this._readItemAsync(`${this.url}/Artists/ReadItem`, id, flat);
+    this.readQuoteAsync = async (id, flat=true) => this._readItemAsync(`${this.url}/Quotes/ReadItem`, id, flat);
 
-    this.readArtistDtoAsync = async (id, flat=true) => this._readItemDtoAsync(`${this.url}/Artists/ReadItemDto`, id);
+    this.readQuoteDtoAsync = async (id, flat=true) => this._readItemDtoAsync(`${this.url}/Quotes/ReadItemDto`, id);
     
-    this.updateArtistAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Artists/UpdateItem`, id, newItem);
+    this.updateQuoteAsync = async (id, newItem) => this._updateItemAsync(`${this.url}/Quotes/UpdateItem`, id, newItem);
 
-    this.createArtistAsync = async (newItem) => this._createItemAsync(`${this.url}/Artists/CreateItem`, newItem);
+    this.createQuoteAsync = async (newItem) => this._createItemAsync(`${this.url}/Quotes/CreateItem`, newItem);
 
-    this.deleteArtistAsync = async (id) => this._deleteItemAsync(`${this.url}/Artists/DeleteItem`, id);
+    this.deleteQuoteAsync = async (id) => this._deleteItemAsync(`${this.url}/Quotes/DeleteItem`, id);
     //#endregion
 }
 
-export default musicService;
+export default friendService;
