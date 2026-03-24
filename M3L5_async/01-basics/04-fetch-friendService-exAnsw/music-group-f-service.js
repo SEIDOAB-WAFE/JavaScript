@@ -1,5 +1,6 @@
 'use strict'; 
 
+//WebApi service broken out in a class to give CRUD musicGroup, Album and Artist
 function musicService (url) {
 
     //constructor
