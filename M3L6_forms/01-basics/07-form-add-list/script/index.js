@@ -35,10 +35,12 @@ let maxNrPages = Math.ceil(bank1.accounts.length/pageSize);
 let sFilter;
 
 
+(() => {
 //Initial page presentation
 bankID.innerHTML = bank1.toString();
 removeAllChildNodes(acountList);
 renderAccounts(0);
+})();
 
 
 function renderAccounts(renderPage) {

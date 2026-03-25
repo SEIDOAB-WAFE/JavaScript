@@ -8,6 +8,19 @@ const myForm = document.getElementById('my-form');
 
 //Start the server by opening a terminal in /03-case-study-server and type node 04-formData-post-server.js
 const url = 'http://localhost:3000/api/upload';
+// let myname = "noname";
+
+// myForm.addEventListener('submit', async event => {
+//   event.preventDefault();
+
+//   myname = document.querySelector('#name').value;
+
+//   const body = document.querySelector('body');
+//   const p = document.createElement('p');
+//   p.textContent = `Hello ${myname}`;
+//   body.appendChild(p);
+// });
+
 
 
 myForm.addEventListener('submit', async event => {

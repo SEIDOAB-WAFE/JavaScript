@@ -22,10 +22,10 @@ formValidate.addEventListener('submit', async event => {
     //this allows me to check all values individually
     let [gn, e] = [groupName.value, established.value];
 
-    data.name = gn;
-    data.establishedYear = e;
+    data.item.name = gn;
+    data.item.establishedYear = e;
 
-    data = await _service.updateMusicGroupAsync(groupId.value, data)
+    data = await _service.updateMusicGroupAsync(groupId.value, data.item)
 });
 
 (async () => {
@@ -37,6 +37,6 @@ formValidate.addEventListener('submit', async event => {
   data = await _service.readMusicGroupAsync(data.pageItems[0].musicGroupId);
 
   //set the values
-  [groupId.value, groupName.value, established.value] = [data.musicGroupId, data.name, data.establishedYear];
+  [groupId.value, groupName.value, established.value] = [data.item.musicGroupId, data.item.name, data.item.establishedYear];
 
 })();

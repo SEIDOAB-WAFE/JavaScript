@@ -18,6 +18,6 @@ const _service = new musicService(`https://music.api.public.seido.se/api`);
     data = await _service.readMusicGroupAsync(data.pageItems[0].musicGroupId);
 
     //set the values
-    [groupName.value, established.value] = [data.name, data.establishedYear];
+    [groupName.value, established.value] = [data.item.name, data.item.establishedYear];
 
 })();
